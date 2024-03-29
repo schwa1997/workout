@@ -6,10 +6,10 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { Typography } from "@mui/material";
-import { ItemCard } from "./itemCard";
 import { WorkOutList } from "./workoutList";
+import { CustomizedAccordionsList } from "./accordianList";
 
-type AccordionData = WorkoutGroup[];
+type AccordionData = WorkoutGroupByOrgan[];
 interface AccordionProps {
   data: AccordionData;
 }
@@ -37,35 +37,17 @@ export const CustomizedAccordions: FC<AccordionProps> = ({ data }) => {
             <Typography>{item.organName}</Typography>
           </AccordionSummary>
           <AccordionDetails>
-            {item.suborgans.map((subItem, subIndex) => (
-              <Accordion key={`${index}-${subIndex}`}>
+            {item.workoutGroupBySubOrgan.map((item, index) => (
+              <Accordion key={`${index}-${index}`}>
                 <AccordionSummary
                   expandIcon={<ExpandMoreIcon />}
-                  aria-controls={`panel${index}-${subIndex}d-content`}
-                  id={`panel${index}-${subIndex}d-header`}
+                  aria-controls={`panel${index}-${index}d-content`}
+                  id={`panel${index}-${index}d-header`}
                 >
-                  <Typography>{subItem.suborganName}</Typography>
+                  <Typography>{item.suborganName}</Typography>
                 </AccordionSummary>
-                <AccordionDetails>
-                  {Object.entries(subItem.workout).map(
-                    ([equipmentType, workouts]) => (
-                      <div key={equipmentType}>
-                        <Accordion
-                          key={`${index}-${subIndex}-${equipmentType}`}
-                        >
-                          <AccordionSummary
-                            expandIcon={<ExpandMoreIcon />}
-                            aria-controls={`panel${index}-${subIndex}-${equipmentType}d-content`}
-                            id={`panel${index}-${subIndex}-${equipmentType}d-header`}
-                          >
-                            <Typography>{equipmentType}</Typography>
-                          </AccordionSummary>
-                          <WorkOutList workouts={workouts} />
-                        </Accordion>
-                      </div>
-                    )
-                  )}
-                </AccordionDetails>
+
+                <CustomizedAccordionsList data={item.workoutGroupByEquipment} />
               </Accordion>
             ))}
           </AccordionDetails>

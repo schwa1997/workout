@@ -1,21 +1,24 @@
 type Workout = {
-  equipmentType: string;
+  key: number;
   workoutName: string;
   imgUrl: string;
   description: string;
 };
-
-type Suborgan = {
+type WorkoutGroupByEquipment = {
+  key: number;
+  equipmentName: string;
+  workout: Workout[];
+};
+type WorkoutGroupBySubOrgan = {
+  key: number;
   suborganName: string;
-  workout: {
-    [key: string]: Workout[];
-  };
+  workoutGroupByEquipment: WorkoutGroupByEquipment[];
 };
 
-type WorkoutGroup = {
-  workoutKey: number;
+type WorkoutGroupByOrgan = {
+  key: number;
   organName: string;
-  suborgans: Suborgan[];
+  workoutGroupBySubOrgan: WorkoutGroupBySubOrgan[];
 };
 
-type WorkoutData = WorkoutGroup[];
+type WorkoutData = WorkoutGroupByOrgan[];
