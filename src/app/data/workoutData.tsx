@@ -1,4 +1,5 @@
-// 使用类型来验证数据
+import { WorkoutData } from "./type";
+
 export const data: WorkoutData = [
   {
     key: 1,

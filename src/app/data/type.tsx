@@ -1,24 +1,31 @@
-type Workout = {
+export type blog = {
+  id: number;
+  title: string;
+  tags: string[];
+  img:string;
+  content: string;
+};
+export type Workout = {
   key: number;
   workoutName: string;
   imgUrl: string;
   description: string;
 };
-type WorkoutGroupByEquipment = {
+export type WorkoutGroupByEquipment = {
   key: number;
   equipmentName: string;
   workout: Workout[];
 };
-type WorkoutGroupBySubOrgan = {
+export type WorkoutGroupBySubOrgan = {
   key: number;
   suborganName: string;
   workoutGroupByEquipment: WorkoutGroupByEquipment[];
 };
 
-type WorkoutGroupByOrgan = {
+export type WorkoutGroupByOrgan = {
   key: number;
   organName: string;
   workoutGroupBySubOrgan: WorkoutGroupBySubOrgan[];
 };
 
-type WorkoutData = WorkoutGroupByOrgan[];
+export type WorkoutData = WorkoutGroupByOrgan[];

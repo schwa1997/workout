@@ -4,7 +4,8 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { Typography } from "@mui/material";
-import { ItemCard } from "./itemCard";
+import { ItemCard } from "../reusable/itemCard";
+import { WorkoutGroupByEquipment } from "@/app/data/type";
 
 
 interface AccordionProps {
@@ -33,9 +34,9 @@ export const CustomizedAccordionsList: FC<AccordionProps> = ({ data }) => {
           >
             <Typography>{group.equipmentName}</Typography>
           </AccordionSummary>
-          <AccordionDetails className="fixed top-0 left-1/4 bg-green-200 overflow-y-auto h-screen">
+          <AccordionDetails className="fixed top-16 left-1/4 bg-green-200 overflow-y-auto h-screen">
             <div className="grid grid-cols-3 grid-flow-row gap-4 m-2">
-              {group.workout.map((workout, workoutIndex) => (
+              {group.workout.map((workout) => (
                 <ItemCard
                   key={workout.key}
                   title={workout.workoutName}

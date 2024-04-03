@@ -7,6 +7,7 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { Typography } from "@mui/material";
 import { CustomizedAccordionsList } from "./accordianList";
+import { WorkoutGroupByOrgan } from "@/app/data/type";
 
 type AccordionData = WorkoutGroupByOrgan[];
 interface AccordionProps {
