@@ -19,7 +19,7 @@ export const CustomizedAccordionsList: FC<AccordionProps> = ({ data }) => {
   };
 
   return (
-    <div className="fixed top-0 left-60 h-fit">
+    <div className="relative max-w-screen-lg">
       {data.map((group, index) => (
         <Accordion
           key={index}
@@ -33,8 +33,8 @@ export const CustomizedAccordionsList: FC<AccordionProps> = ({ data }) => {
           >
             <Typography>{group.equipmentName}</Typography>
           </AccordionSummary>
-          <AccordionDetails>
-            <div className="grid grid-flow-col gap-8 m-9">
+          <AccordionDetails className="fixed top-0 left-1/4 bg-green-200 overflow-y-auto h-screen">
+            <div className="grid grid-cols-3 grid-flow-row gap-4 m-2">
               {group.workout.map((workout, workoutIndex) => (
                 <ItemCard
                   key={workout.key}

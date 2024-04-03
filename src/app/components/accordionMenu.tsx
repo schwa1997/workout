@@ -6,7 +6,6 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { Typography } from "@mui/material";
-import { WorkOutList } from "./workoutList";
 import { CustomizedAccordionsList } from "./accordianList";
 
 type AccordionData = WorkoutGroupByOrgan[];
@@ -46,7 +45,6 @@ export const CustomizedAccordions: FC<AccordionProps> = ({ data }) => {
                 >
                   <Typography>{item.suborganName}</Typography>
                 </AccordionSummary>
-
                 <CustomizedAccordionsList data={item.workoutGroupByEquipment} />
               </Accordion>
             ))}
