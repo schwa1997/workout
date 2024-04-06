@@ -1,12 +1,10 @@
 export const links = [
   {
-    name: "Home",
+    name: "home",
     hash: "/",
   },
   {
-    name: "Blogs",
+    name: "blog",
     hash: "/blogs",
   },
-] as const;
-
-export type SectionName = (typeof links)[number]["name"];
+];
