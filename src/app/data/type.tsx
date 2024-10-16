@@ -11,6 +11,13 @@ export type Workout = {
   imgUrl: string;
   description: string;
 };
+export type workoutType = {
+  id: number;
+  category: string;
+  title: string;
+  img: string;
+  tags: string[];
+};
 export type WorkoutGroupByEquipment = {
   key: number;
   equipmentName: string;

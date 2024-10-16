@@ -7,4 +7,12 @@ export const links = [
     name: "blog",
     hash: "/blogs",
   },
+  {
+    name: "Tracker",
+    hash: "/tracker",
+  },
+  {
+    name: "log",
+    hash: "/log",
+  },
 ];
