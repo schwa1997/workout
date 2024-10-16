@@ -7,10 +7,10 @@ export default function page() {
     <div className="bg-green-100 flex flex-row gap-6">
       {blogs.map((blog, key) => (
         <BlogCard
+          id={blog.id}
           key={blog.id}
           title={blog.title}
           img={blog.img}
-          content={blog.content}
           tags={blog.tags}
         />
       ))}
