@@ -6,11 +6,10 @@ interface blogCardProps {
   id: number;
   title: string;
   img: string;
-  content: string;
   tags: string[];
 }
 
-export const BlogCard: FC<blogCardProps> = ({ id, title, img, content, tags }) => {
+export const BlogCard: FC<blogCardProps> = ({ id, title, img, tags }) => {
   const router = useRouter();
 
   const handleClick = () => {
